@@ -6,6 +6,26 @@
   </head>
   <body>
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+      <div class="form">
+        <blockquote>
+          <p>Below is an app that demonstrates my infinite knowledge of 'POST' requests!</p>
+        </blockquote>
+        <br>
+        <p>Please sign in below and we'll keep track how many times you attend class! Wow, very neato!</p>
+        <form method="POST" action="/students">
+          <input type="text" name="student">
+          <input type="submit" value="Submit">
+        </form>
+        <br>
+        <br>
+        <blockquote>
+          <h2>Attendance list:</h2>
+            <ul>
+              <% for (student in students){ %>
+                <li><%= student %>: <%= students[student] %></li>
+              <% } %>
+            </ul>
+        </blockquote>
+      <div>
   </body>
 </html>
